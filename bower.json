@@ -1,0 +1,30 @@
+{
+  "name": "AdaptationBootstrap",
+  "version": "0.0.0",
+  "homepage": "https://github.com/GaranceV/AdaptationBootstrap",
+  "authors": [
+    "Garance & Sonia"
+  ],
+  "description": "HMI adaptation project, based on bootstrap responsive design",
+  "main": "index.js",
+  "moduleType": [],
+  "keywords": [
+    "HMI",
+    "adaptation",
+    "bootstrap",
+    "responsive",
+    "polytech",
+    "si"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "<=3.3.4"
+  }
+}
