@@ -10,7 +10,7 @@
     <link rel="icon" href="assets/images/cooking_icon.png">
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -56,100 +56,119 @@
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
         <h1>Bienvenue !</h1>
+
         <p>Ici, on va te montrer la recette du <span id="nomRecette"></span> !!</p>
     </div>
 
     <!--En premier, j'insère une boucle dans mon javascript, qui va récupérer tous les ingrédients pour les afficher dans mon ul li
     -->
     <div class=" col-xs-12 col-md-6">
-    <h3 class="hidden-sm">Ingrédients</h3>
-    <table class="table table-striped hidden-sm">
-        <tbody id="ingredientsList"></tbody>
-    </table>
-</div>
-<div class="col-md-12 col-sm-12">
-    <div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
+        <h3 class="hidden-sm">Ingrédients</h3>
+        <table class="table table-striped hidden-sm">
+            <tbody id="ingredientsList"></tbody>
+        </table>
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <div id="myCarousel" class="carousel slide hidden-xs" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
 
-        <!--
-           <div class="col-xs-6 col-md-6 right-side">Etapes
-        <div class="row row-eq-height">
-            <div class="col-xs-1 col-md-2">Ordre
-                <div class="col-xs-12 col-md-12">1</div>
-                <div class="col-xs-12 col-md-12">2</div>
-            </div>
-            <div class="col-xs-11 col-md-10">Détail
-                <div class="col-xs-12 col-md-12">Couper les pommes</div>
-                <div class="col-xs-12 col-md-12">Mixer les fruits</div>
+            <!--
+               <div class="col-xs-6 col-md-6 right-side">Etapes
+            <div class="row row-eq-height">
+                <div class="col-xs-1 col-md-2">Ordre
+                    <div class="col-xs-12 col-md-12">1</div>
+                    <div class="col-xs-12 col-md-12">2</div>
+                </div>
+                <div class="col-xs-11 col-md-10">Détail
+                    <div class="col-xs-12 col-md-12">Couper les pommes</div>
+                    <div class="col-xs-12 col-md-12">Mixer les fruits</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-xs-6 col-md-6 left-side">Commentaires
-        <div class="row row-eq-height">
-            <div class="col-xs-12 col-md-12">
+        <div class="col-xs-6 col-md-6 left-side">Commentaires
+            <div class="row row-eq-height">
                 <div class="col-xs-12 col-md-12">
-                    Attention, il est très important d'avoir lavé les pommes avant !!!
-                    <br/>
-                </div>
-            </div>
-            Il faut en acheter au moins 12.
-        </div>
-    </div>
-        -->
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <div class="col-sm-12 col-md-6 col-lg-6 right-side">Etapes
-                    <div class="row"><!--Premiere ligne, contient soit les ingredients, soit l'etape -->
-                        <div class="hidden-lg hidden-md"><h3>Ingredients de l'étape</h3>
-                        </div>
-                    </div>
-                    <div class="row"><!-- Deuxieme ligne, contient soit l'etape, soit une video embed-->
-                        <div class="hidden-lg hidden-md"><h3>Marche à suivre</h3>
-
-                        </div>
-
+                    <div class="col-xs-12 col-md-12">
+                        Attention, il est très important d'avoir lavé les pommes avant !!!
+                        <br/>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 hidden-sm">
-                    Bonus
+                Il faut en acheter au moins 12.
+            </div>
+        </div>
+            -->
+            <!-- Wrapper for slides -->
+            <!-- Pour pouvoir remplir plusieurs vignettes, il va falloir :
+            Append au dom à l'id carouselEtapes autant de div class='item' que j'ai d'étapes dans ma recette
+            On n'insère pas seulement la div toute nue, mais aussi une string (tant qu'à faire, + simple)
+            qui contient tout ce qui est écrit à la main ici (à ça près qu'on remplacera les id par des class
+            et on aura donc autant de div class='igredientList' que d'étapes dans la recette. Ca tombe bien.
+            On pourra boucler dessus pour les remplir, leur index+1 etant le numero d'etape, du coup.
+             Et le remplissage se fait comme on faisait déjà.
+            -->
+            <div class="carousel-inner" id="carouselEtapes" role="listbox">
+                <div class="item active">
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="row hidden-lg hidden-md">
+                            <h3>Ingredients de l'étape</h3>
+                            <div id="ingredientList"></div>
+                        </div>
+                        <div class="row"><h3>Marche à suivre</h3>
+
+                            <div id="stepContent"></div>
+                        </div>
+                        <div class="row hidden-sm">
+                            <img class="img-responsive" src="assets/images/sampleEmbeded.png" alt="embededVid">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 hidden-sm">
+                        <div class="row">
+                            <h3>Bonus</h3>
+                            ICI, vous pouvez retrouver une information générale, qui n'est pas reliée à l'étape spécifiquement,
+                            mais plutôt à la recette.
+                            Ca peut inclure :
+                            <ul>
+                                <li>Un commentaire d'utilisateur, </li>
+                                <li>une image,</li>
+                                <li>une vidéo,</li>
+                                <li>une pub,</li>
+                                <li>un conseil de cuisine,</li>
+                                <li>...</li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="img_chania2.jpg" alt="Chania">
+                </div>
+
+                <div class="item">
+                    <img src="img_flower.jpg" alt="Flower">
+                </div>
+
+                <div class="item">
+                    <img src="img_flower2.jpg" alt="Flower">
                 </div>
             </div>
 
-            <div class="item">
-                <img src="img_chania2.jpg" alt="Chania">
-            </div>
-
-            <div class="item">
-                <img src="img_flower.jpg" alt="Flower">
-            </div>
-
-            <div class="item">
-                <img src="img_flower2.jpg" alt="Flower">
-            </div>
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-    </div>
-
-
-
-
 
 
 </div>
