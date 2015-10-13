@@ -1,0 +1,48 @@
+{
+    "recette":{
+        "nom":"muffin",
+        "etapes":[
+            {
+                "ordre":"1",
+                "contenu":"faire fondre beurre et chocolat",
+                "ingredients":[
+                    {
+                        "index":"1"
+                    },
+                    {
+                        "index":"2"
+                    }
+                ]
+            },
+            {
+                "ordre":"2",
+                "contenu":"mélanger avec le sucre",
+                "ingredients":[
+                    {
+                        "index":"1"
+                    },
+                    {
+                        "index":"2"
+                    },
+                    {
+                        "index":"3"
+                    }
+                ]
+            }
+        ],
+        "ingredients":[
+            {
+                "index":"1",
+                "nom":"beurre"
+            },
+            {
+                "index":"2",
+                "nom":"chocolat"
+            },
+            {
+                "index":"3",
+                "nom":"sucre"
+            }
+        ]
+    }
+}
