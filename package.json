@@ -9,7 +9,7 @@
   },
 
   "scripts": {
-    "start": "grunt serve --force",
+    "start": "grunt serve --force"
   },
   "keywords": [
     "HMI",
