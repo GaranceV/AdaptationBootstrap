@@ -65,6 +65,11 @@
     <div class=" col-xs-12 col-md-6">
         <h3 class="hidden-sm">Ingrédients</h3>
         <table class="table table-striped hidden-sm">
+            <thead><tr>
+                <th>Nom de l'ingrédient</th>
+                <th>Quantité nécessaire</th>
+            </tr>
+            </thead>
             <tbody id="ingredientsList"></tbody>
         </table>
     </div>
@@ -78,31 +83,6 @@
                 <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
 
-            <!--
-               <div class="col-xs-6 col-md-6 right-side">Etapes
-            <div class="row row-eq-height">
-                <div class="col-xs-1 col-md-2">Ordre
-                    <div class="col-xs-12 col-md-12">1</div>
-                    <div class="col-xs-12 col-md-12">2</div>
-                </div>
-                <div class="col-xs-11 col-md-10">Détail
-                    <div class="col-xs-12 col-md-12">Couper les pommes</div>
-                    <div class="col-xs-12 col-md-12">Mixer les fruits</div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xs-6 col-md-6 left-side">Commentaires
-            <div class="row row-eq-height">
-                <div class="col-xs-12 col-md-12">
-                    <div class="col-xs-12 col-md-12">
-                        Attention, il est très important d'avoir lavé les pommes avant !!!
-                        <br/>
-                    </div>
-                </div>
-                Il faut en acheter au moins 12.
-            </div>
-        </div>
-            -->
             <!-- Wrapper for slides -->
             <!-- Pour pouvoir remplir plusieurs vignettes, il va falloir :
             Append au dom à l'id carouselEtapes autant de div class='item' que j'ai d'étapes dans ma recette
@@ -117,11 +97,11 @@
                     <div class="col-sm-12 col-md-6 col-lg-6">
                         <div class="row hidden-lg hidden-md">
                             <h3>Ingredients de l'étape</h3>
-                            <div id="ingredientList"></div>
+                            <div id="ingredientList1"></div>
                         </div>
                         <div class="row"><h3>Marche à suivre</h3>
 
-                            <div id="stepContent"></div>
+                            <div id="stepContent1"></div>
                         </div>
                         <div class="row hidden-sm">
                             <img class="img-responsive" src="assets/images/sampleEmbeded.png" alt="embededVid">
@@ -146,16 +126,36 @@
                 </div>
 
                 <div class="item">
-                    <img src="img_chania2.jpg" alt="Chania">
-                </div>
+                    <div class="col-sm-12 col-md-6 col-lg-6">
+                        <div class="row hidden-lg hidden-md">
+                            <h3>Ingredients de l'étape</h3>
+                            <div id="ingredientList2"></div>
+                        </div>
+                        <div class="row"><h3>Marche à suivre</h3>
 
-                <div class="item">
-                    <img src="img_flower.jpg" alt="Flower">
-                </div>
+                            <div id="stepContent2"></div>
+                        </div>
+                        <div class="row hidden-sm">
+                            <img class="img-responsive" src="assets/images/sampleEmbeded.png" alt="embededVid">
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 hidden-sm">
+                        <div class="row">
+                            <h3>Bonus</h3>
+                            ICI, vous pouvez retrouver une information générale, qui n'est pas reliée à l'étape spécifiquement,
+                            mais plutôt à la recette.
+                            Ca peut inclure :
+                            <ul>
+                                <li>Un commentaire d'utilisateur, </li>
+                                <li>une image,</li>
+                                <li>une vidéo,</li>
+                                <li>une pub,</li>
+                                <li>un conseil de cuisine,</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                    </div>                </div>
 
-                <div class="item">
-                    <img src="img_flower2.jpg" alt="Flower">
-                </div>
             </div>
 
             <!-- Left and right controls -->
@@ -175,7 +175,6 @@
 <!-- /container -->
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
-<script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endbower -->
 <!-- endbuild -->

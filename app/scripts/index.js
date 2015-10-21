@@ -19,7 +19,7 @@ var recipeData = {
             },
             {
                 ordre: "2",
-                contenu: "mélanger avec le sucre",
+                contenu: "mÃ©langer avec le sucre",
                 ingredients: [
                     {
                         index: "1"
@@ -91,7 +91,7 @@ load();
 
 //On ajoute une fonction "fillCarousel"
 
-//Pour ajouter la liste d'ingrédients de l'étape dans le cas de la tablette
+//Pour ajouter la liste d'ingrÃ©dients de l'Ã©tape dans le cas de la tablette
 var makeUL = function(array) {
     // Create the list element:
     var list = document.createElement('ul');
@@ -114,5 +114,7 @@ var makeUL = function(array) {
 // Add the contents of options[0] to #foo:
 //can this function be used to fill every part of the carousel through a loop ?
 //document.getElementsByClassName()
-document.getElementById('ingredientList').appendChild(makeUL(recipeData.recette.etapes[0].ingredients));
-document.getElementById('stepContent').innerHTML  = recipeData.recette.etapes[0].contenu;
+document.getElementById('ingredientList1').appendChild(makeUL(recipeData.recette.etapes[0].ingredients));
+document.getElementById('stepContent1').innerHTML  = recipeData.recette.etapes[0].contenu;
+document.getElementById('ingredientList2').appendChild(makeUL(recipeData.recette.etapes[1].ingredients));
+document.getElementById('stepContent2').innerHTML  = recipeData.recette.etapes[1].contenu;

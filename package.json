@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/GaranceV/AdaptationBootstrap.git"
   },
+
+  "scripts": {
+    "start": "grunt serve --force",
+  },
   "keywords": [
     "HMI",
     "adaptation",
